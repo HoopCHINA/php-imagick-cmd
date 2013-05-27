@@ -3,7 +3,7 @@ dnl $Id: config.m4 2013-05-24 11:16:23Z Wang Wenlin $
 dnl
 
 PHP_ARG_WITH(imagick-cmd, whether to enable the imagick-cmd extension,
-[ --with-imagick[=DIR]  Enables the imagick-cmd extension. DIR is the prefix to Imagemagick installation directory.], no)
+[  --with-imagick-cmd[=DIR]  Enables the imagick-cmd extension. DIR is the prefix to Imagemagick installation directory.], no)
 
 if test $PHP_IMAGICK_CMD != "no"; then
 
