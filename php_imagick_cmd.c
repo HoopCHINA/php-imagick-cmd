@@ -127,7 +127,7 @@ _dispatch_magick_cmd(INTERNAL_FUNCTION_PARAMETERS, MagickCommand cmd, char *comm
         MagickBooleanType result;
         ImageInfo *ii;
         ExceptionInfo *ei;
-        char *metadata;
+        char *metadata = NULL;
 
         ii = AcquireImageInfo();
         ei = AcquireExceptionInfo();
@@ -144,7 +144,9 @@ _dispatch_magick_cmd(INTERNAL_FUNCTION_PARAMETERS, MagickCommand cmd, char *comm
             RETVAL_BOOL(result);
         }
 
-        DestroyString(metadata);
+        if (metadata) {
+            DestroyString(metadata);
+        }
         DestroyImageInfo(ii);
         DestroyExceptionInfo(ei);
     }
