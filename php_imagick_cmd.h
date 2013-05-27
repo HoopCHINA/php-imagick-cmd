@@ -30,12 +30,14 @@ extern zend_module_entry imagick_cmd_module_entry;
 #endif
 
 /**
-  @@Define:
+  @@Method:
   mixed IMagickCompositeCommand(array args);
 
   @@Example:
   IMagickCompositeCommand(array(
-    '-scale', '90%',
+    'source.png',
+    '-resize', '90%',
+    'target.gif'
   ));
  */
 
