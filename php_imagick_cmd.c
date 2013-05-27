@@ -20,6 +20,7 @@
 #include "php.h"
 #include "ext/standard/php_string.h"
 #include "ext/standard/php_var.h"
+#include "ext/standard/info.h"
 
 #include <stdint.h>
 #include <stdio.h>
@@ -75,7 +76,7 @@ ZEND_GET_MODULE(imagick_cmd)
 #endif
 
 static void
-_dispatch_magick_cmd(INTERNAL_FUNCTION_PARAMETERS, MagickCommand cmd, const char *command)
+_dispatch_magick_cmd(INTERNAL_FUNCTION_PARAMETERS, MagickCommand cmd, char *command)
 {
     zval *arr, **entry;
     HashPosition pos;
@@ -131,7 +132,7 @@ _dispatch_magick_cmd(INTERNAL_FUNCTION_PARAMETERS, MagickCommand cmd, const char
         ii = AcquireImageInfo();
         ei = AcquireExceptionInfo();
 
-        result = (cmd)(ii, argc, argv, &metadata, ei);
+        result = (cmd)(ii, argc, argvp, &metadata, ei);
 
         if (ei->reason) {
             php_error_docref(NULL TSRMLS_CC, E_WARNING, "%s", ei->reason);
