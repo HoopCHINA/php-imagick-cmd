@@ -30,6 +30,11 @@
 #include "php_imagick_cmd.h"
 #include <wand/MagickWand.h>
 
+#if MagickLibVersion < 0x657
+typedef MagickBooleanType
+  (*MagickCommand)(ImageInfo *,int,char **,char **,ExceptionInfo *);
+#endif
+
 /* {{{ imagick_cmd_functions[]
  *
  * Every user visible function must have an entry in imagick_cmd_functions[].
@@ -240,6 +245,7 @@ PHP_FUNCTION(IMagickConjureCommand)
 }
 /* }}} */
 
+#if MagickLibVersion >= 0x650
 /* {{{ proto mixed IMagickStreamCommand(array args)
  */
 PHP_FUNCTION(IMagickStreamCommand)
@@ -247,6 +253,7 @@ PHP_FUNCTION(IMagickStreamCommand)
     _dispatch_magick_cmd(INTERNAL_FUNCTION_PARAM_PASSTHRU, StreamImageCommand, "stream");
 }
 /* }}} */
+#endif
 
 /* {{{ proto mixed IMagickImportCommand(array args)
  */

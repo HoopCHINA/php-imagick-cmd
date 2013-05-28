@@ -51,7 +51,9 @@ PHP_FUNCTION(IMagickCompositeCommand);
 PHP_FUNCTION(IMagickIdentifyCommand);
 PHP_FUNCTION(IMagickCompareCommand);
 PHP_FUNCTION(IMagickConjureCommand);
+#if MagickLibVersion >= 0x650
 PHP_FUNCTION(IMagickStreamCommand);
+#endif
 PHP_FUNCTION(IMagickImportCommand);
 PHP_FUNCTION(IMagickDisplayCommand);
 PHP_FUNCTION(IMagickAnimateCommand);
