@@ -3,6 +3,36 @@ ImagickCommand PHP extension
 
 TODO...
 
+>>> ImagickCommand Example
+
+```php
+IMagickConvertCommand(array(
+  'source.png',
+  '-resize', '90%',
+  'target.gif'
+));
+```
+
+>>> ImagickCommand Functions
+
+```php
+// IMagickCommands
+mixed IMagickMogrifyCommand(array args);
+mixed IMagickConvertCommand(array args);
+mixed IMagickCompositeCommand(array args);
+mixed IMagickIdentifyCommand(array args);
+mixed IMagickCompareCommand(array args);
+mixed IMagickConjureCommand(array args);
+mixed IMagickStreamCommand(array args);
+mixed IMagickImportCommand(array args);
+mixed IMagickDisplayCommand(array args);
+mixed IMagickAnimateCommand(array args);
+mixed IMagickMontageCommand(array args);
+
+// Current module version
+string IMagickCommandVersion();
+```
+
 License
 -------
 

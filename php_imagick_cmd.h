@@ -31,10 +31,10 @@ extern zend_module_entry imagick_cmd_module_entry;
 
 /**
   @method:
-  mixed IMagickCompositeCommand(array args);
+  mixed IMagickConvertCommand(array args);
 
   @example:
-  IMagickCompositeCommand(array(
+  IMagickConvertCommand(array(
     'source.png',
     '-resize', '90%',
     'target.gif'
