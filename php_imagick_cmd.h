@@ -30,16 +30,18 @@ extern zend_module_entry imagick_cmd_module_entry;
 #endif
 
 /**
-  @@Method:
+  @method:
   mixed IMagickCompositeCommand(array args);
 
-  @@Example:
+  @example:
   IMagickCompositeCommand(array(
     'source.png',
     '-resize', '90%',
     'target.gif'
   ));
  */
+
+#include <wand/MagickWand.h>
 
 PHP_MINIT_FUNCTION(imagick_cmd);
 PHP_MSHUTDOWN_FUNCTION(imagick_cmd);
