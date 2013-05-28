@@ -34,7 +34,7 @@ if test $PHP_IMAGICK_CMD != "no"; then
   if test "$IMAGEMAGICK_VERSION_MASK" -ge 6005000; then
     AC_MSG_RESULT(found version $IMAGEMAGICK_VERSION_ORIG)
   else
-    AC_MSG_ERROR(no. You need at least Imagemagick version 6.5.0 to use Imagick.)
+    AC_MSG_ERROR(no. You need at least Imagemagick version 6.5.0 to use IMagickCommand.)
   fi
 
   WAND_DIR=`$WAND_BINARY --prefix` 
