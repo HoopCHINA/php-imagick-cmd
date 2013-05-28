@@ -30,11 +30,11 @@ if test $PHP_IMAGICK_CMD != "no"; then
   IMAGEMAGICK_VERSION_ORIG=`$WAND_BINARY --version`
   IMAGEMAGICK_VERSION_MASK=`echo ${IMAGEMAGICK_VERSION_ORIG} | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
 
-  AC_MSG_CHECKING(if ImageMagick version is at least 6.2.4)
-  if test "$IMAGEMAGICK_VERSION_MASK" -ge 6002004; then
+  AC_MSG_CHECKING(if ImageMagick version is at least 6.5.0)
+  if test "$IMAGEMAGICK_VERSION_MASK" -ge 6005000; then
     AC_MSG_RESULT(found version $IMAGEMAGICK_VERSION_ORIG)
   else
-    AC_MSG_ERROR(no. You need at least Imagemagick version 6.2.4 to use Imagick.)
+    AC_MSG_ERROR(no. You need at least Imagemagick version 6.5.0 to use Imagick.)
   fi
 
   WAND_DIR=`$WAND_BINARY --prefix` 

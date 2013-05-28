@@ -28,10 +28,11 @@
 #include <string.h>
 
 #include "php_imagick_cmd.h"
+#include <wand/MagickWand.h>
 
 #if MagickLibVersion < 0x657
 typedef MagickBooleanType
-  (*MagickCommand)(ImageInfo *,int,char **,char **,ExceptionInfo *);
+  (*MagickCommand)(ImageInfo *, int, char **, char **, ExceptionInfo *);
 #endif
 
 /* {{{ imagick_cmd_functions[]
@@ -45,9 +46,7 @@ zend_function_entry imagick_cmd_functions[] = {
     PHP_FE(IMagickIdentifyCommand,  NULL)
     PHP_FE(IMagickCompareCommand,   NULL)
     PHP_FE(IMagickConjureCommand,   NULL)
-#if MagickLibVersion >= 0x650
     PHP_FE(IMagickStreamCommand,    NULL)
-#endif
     PHP_FE(IMagickImportCommand,    NULL)
     PHP_FE(IMagickDisplayCommand,   NULL)
     PHP_FE(IMagickAnimateCommand,   NULL)
@@ -246,7 +245,6 @@ PHP_FUNCTION(IMagickConjureCommand)
 }
 /* }}} */
 
-#if MagickLibVersion >= 0x650
 /* {{{ proto mixed IMagickStreamCommand(array args)
  */
 PHP_FUNCTION(IMagickStreamCommand)
@@ -254,7 +252,6 @@ PHP_FUNCTION(IMagickStreamCommand)
     _dispatch_magick_cmd(INTERNAL_FUNCTION_PARAM_PASSTHRU, StreamImageCommand, "stream");
 }
 /* }}} */
-#endif
 
 /* {{{ proto mixed IMagickImportCommand(array args)
  */

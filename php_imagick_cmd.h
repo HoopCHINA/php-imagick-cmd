@@ -41,8 +41,6 @@ extern zend_module_entry imagick_cmd_module_entry;
   ));
  */
 
-#include <wand/MagickWand.h>
-
 PHP_MINIT_FUNCTION(imagick_cmd);
 PHP_MSHUTDOWN_FUNCTION(imagick_cmd);
 PHP_MINFO_FUNCTION(imagick_cmd);
@@ -53,9 +51,7 @@ PHP_FUNCTION(IMagickCompositeCommand);
 PHP_FUNCTION(IMagickIdentifyCommand);
 PHP_FUNCTION(IMagickCompareCommand);
 PHP_FUNCTION(IMagickConjureCommand);
-#if MagickLibVersion >= 0x650
 PHP_FUNCTION(IMagickStreamCommand);
-#endif
 PHP_FUNCTION(IMagickImportCommand);
 PHP_FUNCTION(IMagickDisplayCommand);
 PHP_FUNCTION(IMagickAnimateCommand);
