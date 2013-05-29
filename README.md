@@ -7,8 +7,8 @@ TODO...
 
 ```php
 IMagickConvertCommand(array(
-  'source.png',
   '-resize', '90%',
+  'source.png',
   'target.gif'
 ));
 ```
