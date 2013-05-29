@@ -35,8 +35,8 @@ extern zend_module_entry imagick_cmd_module_entry;
 
   @example:
   IMagickConvertCommand(array(
-    'source.png',
     '-resize', '90%',
+    'source.png',
     'target.gif'
   ));
  */
