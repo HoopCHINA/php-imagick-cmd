@@ -10,6 +10,7 @@ ImageMagick default build with __OpenMP__ support, this will make bugs with PHP 
 ./configure --disable-openmp
 ```
 
+
 >>> ImagickCommand Example
 
 ```php
@@ -19,6 +20,7 @@ IMagickConvertCommand(array(
   'target.gif'
 ));
 ```
+
 
 >>> ImagickCommand Functions
 
@@ -39,6 +41,7 @@ mixed IMagickMontageCommand(array args);
 // Current module version
 string IMagickCommandVersion();
 ```
+
 
 License
 -------
