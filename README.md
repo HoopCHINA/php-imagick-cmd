@@ -1,7 +1,8 @@
 ImagickCommand PHP extension
 ============================
 
->>> Top Tips
+Top Tips
+--------
 
 ImageMagick default build with __OpenMP__ support, this will make bugs with PHP environment. You need turn off this support when building ImageMagick with:
 
@@ -10,6 +11,8 @@ ImageMagick default build with __OpenMP__ support, this will make bugs with PHP 
 ./configure --disable-openmp
 ```
 
+Documents
+---------
 
 >>> ImagickCommand Example
 
@@ -20,7 +23,6 @@ IMagickConvertCommand(array(
   'target.gif'
 ));
 ```
-
 
 >>> ImagickCommand Functions
 
@@ -41,7 +43,6 @@ mixed IMagickMontageCommand(array args);
 // Current module version
 string IMagickCommandVersion();
 ```
-
 
 License
 -------
