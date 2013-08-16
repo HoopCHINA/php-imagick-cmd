@@ -1,7 +1,14 @@
 ImagickCommand PHP extension
 ============================
 
-TODO...
+>>> Top Tips
+
+ImageMagick default build with __OpenMP__ support, this will make bugs with PHP environment. You need turn off this support when building ImageMagick with:
+
+```bash
+# Build ImageMagick
+./configure --disable-openmp
+```
 
 >>> ImagickCommand Example
 

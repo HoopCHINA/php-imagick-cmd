@@ -84,8 +84,8 @@ if test $PHP_IMAGICK_CMD != "no"; then
 
   AC_DEFINE(HAVE_IMAGICK_CMD, 1, [Whether you want imagick-cmd support])
 
-  IMAGICK_LIBS=`$WAND_BINARY --libs`
-  IMAGICK_INCS=`$WAND_BINARY --cflags`
+  IMAGICK_LIBS=`PKG_CONFIG_PATH="${WAND_DIR}/lib/pkgconfig" $WAND_BINARY --libs`
+  IMAGICK_INCS=`PKG_CONFIG_PATH="${WAND_DIR}/lib/pkgconfig" $WAND_BINARY --cflags`
 
   PHP_EVAL_LIBLINE($IMAGICK_LIBS, IMAGICK_CMD_SHARED_LIBADD)
   PHP_EVAL_INCLINE($IMAGICK_INCS)
