@@ -11,10 +11,8 @@ ImageMagick default build with __OpenMP__ support, this will make bugs with PHP 
 ./configure --disable-openmp
 ```
 
-Documents
----------
-
->>> ImagickCommand Example
+ImagickCommand Example
+----------------------
 
 ```php
 IMagickConvertCommand(array(
@@ -24,7 +22,8 @@ IMagickConvertCommand(array(
 ));
 ```
 
->>> ImagickCommand Functions
+ImagickCommand Functions
+------------------------
 
 ```php
 // IMagickCommands
